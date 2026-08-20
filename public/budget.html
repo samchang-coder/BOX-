@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>記帳</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/budget.css" />
+</head>
+<body>
+  <div class="app budget-app">
+    <header class="app-header">
+      <h1>記帳</h1>
+      <a class="nav-link" href="/">回到管家</a>
+    </header>
+
+    <main class="budget-main">
+      <section class="month-bar">
+        <button id="prev-month" type="button" aria-label="上個月">‹</button>
+        <input id="month-input" type="month" />
+        <button id="next-month" type="button" aria-label="下個月">›</button>
+      </section>
+
+      <section class="summary">
+        <div class="summary-total">
+          <span class="summary-label">本月總支出</span>
+          <span id="total-amount" class="summary-amount">$0</span>
+        </div>
+        <ul id="category-breakdown" class="category-breakdown"></ul>
+      </section>
+
+      <form id="record-form" class="record-form">
+        <input id="record-date" type="date" required />
+        <select id="record-category" required></select>
+        <input id="record-amount" type="number" min="1" step="1" placeholder="金額" required />
+        <input id="record-note" type="text" placeholder="備註（選填）" />
+        <button type="submit">新增</button>
+      </form>
+
+      <ul id="record-list" class="record-list"></ul>
+
+      <section class="category-manage">
+        <h2>分類管理</h2>
+        <ul id="category-list" class="category-list"></ul>
+        <form id="category-form" class="category-form">
+          <input id="new-category-name" type="text" placeholder="新增分類名稱" />
+          <button type="submit">新增分類</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/budget.js"></script>
+</body>
+</html>

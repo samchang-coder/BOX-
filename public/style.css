@@ -49,6 +49,9 @@ body {
 }
 
 .app-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   padding: 16px 20px;
   border-bottom: 1px solid var(--border);
 }
@@ -57,6 +60,16 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+}
+
+.nav-link {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--accent);
 }
 
 .chat {

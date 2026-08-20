@@ -1,0 +1,210 @@
+.budget-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.month-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-bar input[type="month"] {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.month-bar button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.summary {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--assistant-bubble);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.summary-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.category-breakdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.record-form,
+.category-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.record-form input,
+.record-form select,
+.category-form input {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.record-form input[type="date"] {
+  flex: 1 1 140px;
+}
+
+.record-form select {
+  flex: 1 1 90px;
+}
+
+.record-form input[type="number"] {
+  flex: 1 1 90px;
+}
+
+.record-form input[type="text"] {
+  flex: 2 1 140px;
+}
+
+.record-form button,
+.category-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.record-list,
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.record-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.record-list li.empty {
+  color: var(--muted);
+  justify-content: center;
+  border-style: dashed;
+}
+
+.record-date {
+  color: var(--muted);
+}
+
+.record-category {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+}
+
+.record-note {
+  flex: 1;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-amount {
+  font-weight: 600;
+}
+
+.del-record,
+.del-category {
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.del-record:hover,
+.del-category:hover {
+  color: var(--accent);
+}
+
+.category-manage h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.category-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.category-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+}

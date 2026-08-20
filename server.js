@@ -3,10 +3,12 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import Anthropic from '@anthropic-ai/sdk';
+import budgetRouter from './budget.js';
 
 const app = express();
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/api/budget', budgetRouter);
 
 const client = new Anthropic(); // 從環境變數 ANTHROPIC_API_KEY 讀取金鑰
 
