@@ -10,43 +10,127 @@
 <body>
   <div class="app budget-app">
     <header class="app-header">
-      <h1>記帳</h1>
+      <div class="brand">
+        <svg class="bear-mascot" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true">
+          <circle class="bear-ear" cx="22" cy="20" r="14" />
+          <circle class="bear-ear" cx="78" cy="20" r="14" />
+          <circle class="bear-head" cx="50" cy="55" r="38" />
+          <ellipse class="bear-snout" cx="50" cy="65" rx="20" ry="16" />
+          <circle class="bear-eye" cx="38" cy="50" r="4" />
+          <circle class="bear-eye" cx="62" cy="50" r="4" />
+          <circle class="bear-nose" cx="50" cy="62" r="4" />
+          <path class="bear-mouth" d="M42 72 Q50 78 58 72" />
+        </svg>
+        <h1>記帳</h1>
+      </div>
       <a class="nav-link" href="/">回到管家</a>
     </header>
 
+    <nav class="tabs">
+      <button type="button" class="tab-btn active" data-tab="ledger">記帳</button>
+      <button type="button" class="tab-btn" data-tab="stats">統計</button>
+    </nav>
+
     <main class="budget-main">
-      <section class="month-bar">
-        <button id="prev-month" type="button" aria-label="上個月">‹</button>
-        <input id="month-input" type="month" />
-        <button id="next-month" type="button" aria-label="下個月">›</button>
-      </section>
+      <div id="tab-ledger" class="tab-panel active">
+        <section class="month-bar">
+          <button id="prev-month" type="button" class="round-btn" aria-label="上個月">‹</button>
+          <input id="month-input" type="month" />
+          <button id="next-month" type="button" class="round-btn" aria-label="下個月">›</button>
+        </section>
 
-      <section class="summary">
-        <div class="summary-total">
-          <span class="summary-label">本月總支出</span>
-          <span id="total-amount" class="summary-amount">$0</span>
-        </div>
-        <ul id="category-breakdown" class="category-breakdown"></ul>
-      </section>
+        <section class="summary card">
+          <div class="summary-total">
+            <span class="summary-label">本月總支出</span>
+            <span id="total-amount" class="summary-amount">$0</span>
+          </div>
+          <ul id="category-breakdown" class="category-breakdown"></ul>
+          <ul id="member-breakdown" class="category-breakdown member-breakdown"></ul>
+        </section>
 
-      <form id="record-form" class="record-form">
-        <input id="record-date" type="date" required />
-        <select id="record-category" required></select>
-        <input id="record-amount" type="number" min="1" step="1" placeholder="金額" required />
-        <input id="record-note" type="text" placeholder="備註（選填）" />
-        <button type="submit">新增</button>
-      </form>
+        <section class="card">
+          <h2 class="card-title">新增一筆</h2>
+          <form id="record-form" class="record-form">
+            <label class="field">
+              <span class="field-label">日期</span>
+              <input id="record-date" type="date" required />
+            </label>
+            <label class="field">
+              <span class="field-label">分類</span>
+              <select id="record-category" required></select>
+            </label>
+            <label class="field">
+              <span class="field-label">金額</span>
+              <input id="record-amount" type="number" min="1" step="1" placeholder="0" required />
+            </label>
+            <label class="field">
+              <span class="field-label">是誰花的（選填）</span>
+              <select id="record-member">
+                <option value="">未指定</option>
+              </select>
+            </label>
+            <label class="field field-note">
+              <span class="field-label">備註（選填）</span>
+              <input id="record-note" type="text" placeholder="這筆花費是..." />
+            </label>
+            <button type="submit" class="primary-btn">新增</button>
+          </form>
+        </section>
 
-      <ul id="record-list" class="record-list"></ul>
+        <ul id="record-list" class="record-list"></ul>
 
-      <section class="category-manage">
-        <h2>分類管理</h2>
-        <ul id="category-list" class="category-list"></ul>
-        <form id="category-form" class="category-form">
-          <input id="new-category-name" type="text" placeholder="新增分類名稱" />
-          <button type="submit">新增分類</button>
-        </form>
-      </section>
+        <section class="card category-manage">
+          <h2 class="card-title">分類管理</h2>
+          <ul id="category-list" class="category-list"></ul>
+          <form id="category-form" class="category-form">
+            <input id="new-category-name" type="text" placeholder="新增分類名稱" />
+            <button type="submit" class="ghost-btn">新增分類</button>
+          </form>
+        </section>
+
+        <section class="card category-manage">
+          <h2 class="card-title">人員管理</h2>
+          <ul id="member-list" class="category-list"></ul>
+          <form id="member-form" class="category-form">
+            <input id="new-member-name" type="text" placeholder="新增人員名稱" />
+            <button type="submit" class="ghost-btn">新增人員</button>
+          </form>
+        </section>
+      </div>
+
+      <div id="tab-stats" class="tab-panel">
+        <section class="card">
+          <h2 class="card-title">日期區間查詢</h2>
+          <form id="range-form" class="record-form">
+            <label class="field">
+              <span class="field-label">開始日期</span>
+              <input id="range-start" type="date" required />
+            </label>
+            <label class="field">
+              <span class="field-label">結束日期</span>
+              <input id="range-end" type="date" required />
+            </label>
+            <label class="field">
+              <span class="field-label">人員</span>
+              <select id="range-member">
+                <option value="">全部人員</option>
+              </select>
+            </label>
+            <button type="submit" class="primary-btn">查詢</button>
+          </form>
+        </section>
+
+        <section class="summary card">
+          <div class="summary-total">
+            <span class="summary-label">區間總支出</span>
+            <span id="range-total-amount" class="summary-amount">$0</span>
+          </div>
+          <ul id="range-category-breakdown" class="category-breakdown"></ul>
+          <ul id="range-member-breakdown" class="category-breakdown member-breakdown"></ul>
+        </section>
+
+        <ul id="range-record-list" class="record-list"></ul>
+      </div>
     </main>
   </div>
 

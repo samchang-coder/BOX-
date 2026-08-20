@@ -8,14 +8,20 @@ const DATA_FILE = path.join(DATA_DIR, 'budget.json');
 const DEFAULT_CATEGORIES = ['吃', '喝', '玩', '樂', '其他'];
 
 function loadData() {
+  let data;
   if (!fs.existsSync(DATA_FILE)) {
-    return { categories: [...DEFAULT_CATEGORIES], records: [] };
+    data = { categories: [...DEFAULT_CATEGORIES], members: [], records: [] };
+  } else {
+    try {
+      data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+    } catch {
+      data = { categories: [...DEFAULT_CATEGORIES], members: [], records: [] };
+    }
   }
-  try {
-    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
-  } catch {
-    return { categories: [...DEFAULT_CATEGORIES], records: [] };
+  if (!Array.isArray(data.members)) {
+    data.members = [];
   }
+  return data;
 }
 
 function saveData(data) {
@@ -54,16 +60,53 @@ router.delete('/categories/:name', (req, res) => {
   res.json({ categories: data.categories });
 });
 
+router.get('/members', (req, res) => {
+  res.json({ members: loadData().members });
+});
+
+router.post('/members', (req, res) => {
+  const name = (req.body?.name ?? '').trim();
+  if (!name) {
+    return res.status(400).json({ error: '人員名稱為必填' });
+  }
+  const data = loadData();
+  if (data.members.includes(name)) {
+    return res.status(400).json({ error: '人員已存在' });
+  }
+  data.members.push(name);
+  saveData(data);
+  res.json({ members: data.members });
+});
+
+router.delete('/members/:name', (req, res) => {
+  const data = loadData();
+  data.members = data.members.filter((m) => m !== req.params.name);
+  saveData(data);
+  res.json({ members: data.members });
+});
+
 router.get('/records', (req, res) => {
-  const month = req.query.month || taipeiToday().slice(0, 7);
-  const records = loadData()
-    .records.filter((r) => r.date.startsWith(month))
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
-  res.json({ month, records });
+  const { start, end, member } = req.query;
+  const all = loadData().records;
+  let records;
+
+  if (start || end) {
+    records = all.filter((r) => (!start || r.date >= start) && (!end || r.date <= end));
+  } else {
+    const month = req.query.month || taipeiToday().slice(0, 7);
+    records = all.filter((r) => r.date.startsWith(month));
+  }
+
+  if (member) {
+    records = records.filter((r) => r.member === member);
+  }
+
+  records.sort((a, b) => (a.date < b.date ? 1 : -1));
+  res.json({ records });
 });
 
 router.post('/records', (req, res) => {
-  const { date, category, amount, note } = req.body ?? {};
+  const { date, category, amount, note, member } = req.body ?? {};
   const parsedAmount = Number(amount);
 
   if (!date || !category || !Number.isFinite(parsedAmount) || parsedAmount <= 0) {
@@ -77,6 +120,7 @@ router.post('/records', (req, res) => {
     category,
     amount: parsedAmount,
     note: (note ?? '').trim(),
+    member: (member ?? '').trim(),
   };
   data.records.push(record);
   saveData(data);

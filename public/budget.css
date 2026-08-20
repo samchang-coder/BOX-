@@ -1,62 +1,126 @@
+/* Tabs */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  padding: 12px 6px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-right: 14px;
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .budget-main {
   flex: 1;
   overflow-y: auto;
-  padding: 16px 20px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  padding: 18px 20px 40px;
 }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: var(--panel);
+}
+
+.card-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Month navigation */
 
 .month-bar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 14px;
 }
 
 .month-bar input[type="month"] {
-  flex: 1;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 14px;
-}
-
-.month-bar button {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 999px;
   background: var(--panel);
   color: var(--text);
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.summary {
+.round-btn {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.round-btn:hover {
   background: var(--assistant-bubble);
+}
+
+.round-btn:active {
+  transform: scale(0.92);
+}
+
+/* Summary */
+
+.summary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border: none;
+  color: #fff;
 }
 
 .summary-total {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 .summary-label {
   font-size: 13px;
-  color: var(--muted);
+  opacity: 0.85;
 }
 
 .summary-amount {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
-  color: var(--accent);
+  letter-spacing: 0.02em;
 }
 
 .category-breakdown {
@@ -65,99 +129,199 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .category-breakdown li {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   font-size: 13px;
-  color: var(--text);
 }
 
-.record-form,
-.category-form {
+.cat-breakdown-name {
+  flex: 0 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 4px;
+  min-width: 64px;
+}
+
+.cat-bar-track {
+  flex: 1;
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.cat-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.cat-breakdown-amount {
+  flex: 0 0 auto;
+  font-weight: 600;
+  min-width: 64px;
+  text-align: right;
+}
+
+.summary-empty {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.member-breakdown:not(:empty) {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Record form */
+
+.record-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-note {
+  grid-column: 1 / -1;
+}
+
+.field-label {
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .record-form input,
-.record-form select,
-.category-form input {
-  padding: 8px 10px;
+.record-form select {
+  padding: 9px 11px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 9px;
   background: var(--bg);
   color: var(--text);
   font-size: 14px;
   font-family: inherit;
 }
 
-.record-form input[type="date"] {
-  flex: 1 1 140px;
+.record-form input:focus,
+.record-form select:focus,
+.category-form input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
 }
 
-.record-form select {
-  flex: 1 1 90px;
-}
-
-.record-form input[type="number"] {
-  flex: 1 1 90px;
-}
-
-.record-form input[type="text"] {
-  flex: 2 1 140px;
-}
-
-.record-form button,
-.category-form button {
-  padding: 8px 16px;
+.primary-btn {
+  grid-column: 1 / -1;
+  padding: 10px 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 9px;
   background: var(--accent);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity 0.15s ease;
 }
 
-.record-list,
-.category-list {
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+.ghost-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ghost-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Record list */
+
+.record-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .record-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
+  gap: 12px;
+  padding: 10px 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
+  background: var(--panel);
   font-size: 13px;
+  transition: box-shadow 0.15s ease;
+}
+
+.record-list li:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .record-list li.empty {
   color: var(--muted);
   justify-content: center;
   border-style: dashed;
+  box-shadow: none;
+  padding: 24px 14px;
 }
 
 .record-date {
+  flex: 0 0 auto;
   color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 
 .record-category {
-  padding: 2px 8px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
   border-radius: 999px;
-  background: var(--accent);
   color: #fff;
   font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.record-member {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1.5px solid;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .record-note {
@@ -169,42 +333,82 @@
 }
 
 .record-amount {
-  font-weight: 600;
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .del-record,
 .del-category {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
+  border-radius: 50%;
   background: none;
   color: var(--muted);
   cursor: pointer;
-  font-size: 12px;
-  padding: 2px 4px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .del-record:hover,
 .del-category:hover {
-  color: var(--accent);
+  background: var(--assistant-bubble);
+  color: #d9534f;
 }
 
-.category-manage h2 {
-  margin: 0 0 10px;
-  font-size: 15px;
-}
+/* Category management */
 
 .category-list {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 10px;
 }
 
 .category-list li {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px;
+  padding: 5px 6px 5px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 13px;
+  background: var(--bg);
+}
+
+.category-list .cat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.category-form {
+  display: flex;
+  gap: 8px;
+}
+
+.category-form input {
+  flex: 1;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+@media (max-width: 420px) {
+  .record-form {
+    grid-template-columns: 1fr;
+  }
 }
