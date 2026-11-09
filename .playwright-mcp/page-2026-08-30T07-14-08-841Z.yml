@@ -1,0 +1,114 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: BOXS零售 POS
+  - generic [ref=e6]:
+    - navigation [ref=e7]:
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 報表
+        - link "今日報表" [ref=e10] [cursor=pointer]:
+          - /url: /dashboard
+      - generic [ref=e13]:
+        - paragraph [ref=e14]: 前場
+        - link "收銀" [ref=e15] [cursor=pointer]:
+          - /url: /pos
+        - link "訂單管理" [ref=e18] [cursor=pointer]:
+          - /url: /orders
+        - link "付款紀錄" [ref=e21] [cursor=pointer]:
+          - /url: /payments
+        - link "錢櫃" [ref=e24] [cursor=pointer]:
+          - /url: /cash-drawer
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: 後場管理
+        - link "商品與庫存" [ref=e29] [cursor=pointer]:
+          - /url: /products
+        - link "會員管理" [ref=e32] [cursor=pointer]:
+          - /url: /members
+        - link "優惠券" [ref=e35] [cursor=pointer]:
+          - /url: /coupons
+        - link "禮品兌換" [ref=e38] [cursor=pointer]:
+          - /url: /gifts
+        - link "員工打卡" [ref=e41] [cursor=pointer]:
+          - /url: /employees
+        - link "庫存用量報表" [ref=e44] [cursor=pointer]:
+          - /url: /inventory-report
+        - link "商品銷售週期報表" [ref=e47] [cursor=pointer]:
+          - /url: /product-sales-report
+        - link "服務人員業績表" [ref=e50] [cursor=pointer]:
+          - /url: /staff-sales-report
+        - link "毛利分析報表" [ref=e53] [cursor=pointer]:
+          - /url: /margin-report
+        - link "稽核紀錄" [ref=e56] [cursor=pointer]:
+          - /url: /audit-log
+        - link "廣告管理" [ref=e59] [cursor=pointer]:
+          - /url: /promo-messages
+        - link "系統設定變更紀錄" [ref=e62] [cursor=pointer]:
+          - /url: /settings-audit-log
+        - link "商店設定" [ref=e65] [cursor=pointer]:
+          - /url: /settings
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - heading "商品與庫存" [level=1] [ref=e71]
+        - paragraph [ref=e72]: 共 3 項商品 · 售價直接填「元」
+      - navigation [ref=e73]:
+        - button "分類與新增商品" [ref=e74] [cursor=pointer]
+        - button "商品" [ref=e75] [cursor=pointer]
+        - button "目前庫存" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - heading "批次編輯" [level=2] [ref=e79]
+          - button "開始批次編輯" [ref=e80] [cursor=pointer]
+        - paragraph [ref=e81]: 勾選多個商品，一次套用同一個變更（改分類／上下架／調整售價），比逐筆編輯快。
+      - generic [ref=e82]:
+        - heading "單品" [level=2] [ref=e84]
+        - table [ref=e86]:
+          - rowgroup [ref=e87]:
+            - row [ref=e88]:
+              - columnheader [ref=e89]
+              - columnheader "SKU" [ref=e90]
+              - columnheader "名稱" [ref=e91]
+              - columnheader "分類" [ref=e92]
+              - columnheader "售價" [ref=e93]
+              - columnheader "成本" [ref=e94]
+              - columnheader "毛利率" [ref=e95]
+              - columnheader "狀態" [ref=e96]
+              - columnheader [ref=e97]
+          - rowgroup [ref=e98]:
+            - row [ref=e99]:
+              - cell [ref=e100]
+              - cell "P0001" [ref=e101]
+              - cell "測試包裝商品" [ref=e102]
+              - cell "—" [ref=e103]
+              - cell "$100" [ref=e104]
+              - cell "$100" [ref=e105]
+              - cell "0.0%" [ref=e106]
+              - cell "販售中" [ref=e107]
+              - cell [ref=e109]:
+                - button "編輯" [ref=e110] [cursor=pointer]
+                - button "停售" [ref=e111] [cursor=pointer]
+                - button "刪除" [ref=e112] [cursor=pointer]
+            - row [ref=e113]:
+              - cell [ref=e114]
+              - cell "P0002" [ref=e115]
+              - cell "測試進貨商品" [ref=e116]
+              - cell "—" [ref=e117]
+              - cell "$50" [ref=e118]
+              - cell "$30" [ref=e119]
+              - cell "40.0%" [ref=e120]
+              - cell "販售中" [ref=e121]
+              - cell [ref=e123]:
+                - button "編輯" [ref=e124] [cursor=pointer]
+                - button "停售" [ref=e125] [cursor=pointer]
+                - button "刪除" [ref=e126] [cursor=pointer]
+            - row [ref=e127]:
+              - cell [ref=e128]
+              - cell "P0003" [ref=e129]
+              - cell "測試無成本商品" [ref=e130]
+              - cell "—" [ref=e131]
+              - cell "$80" [ref=e132]
+              - cell "—" [ref=e133]
+              - cell "—" [ref=e134]
+              - cell "販售中" [ref=e135]
+              - cell [ref=e137]:
+                - button "編輯" [ref=e138] [cursor=pointer]
+                - button "停售" [ref=e139] [cursor=pointer]
+                - button "刪除" [ref=e140] [cursor=pointer]

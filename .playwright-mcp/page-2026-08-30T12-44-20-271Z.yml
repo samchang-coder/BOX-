@@ -1,0 +1,97 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]: BOXS零售 POS
+  - generic [ref=f1e6]:
+    - navigation [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - paragraph [ref=f1e9]: 報表
+        - link "今日報表" [ref=f1e10] [cursor=pointer]:
+          - /url: /dashboard
+      - generic [ref=f1e13]:
+        - paragraph [ref=f1e14]: 前場
+        - link "收銀" [ref=f1e15] [cursor=pointer]:
+          - /url: /pos
+        - link "訂單管理" [ref=f1e18] [cursor=pointer]:
+          - /url: /orders
+        - link "付款紀錄" [ref=f1e21] [cursor=pointer]:
+          - /url: /payments
+        - link "錢櫃" [ref=f1e24] [cursor=pointer]:
+          - /url: /cash-drawer
+      - generic [ref=f1e27]:
+        - paragraph [ref=f1e28]: 後場管理
+        - link "商品與庫存" [ref=f1e29] [cursor=pointer]:
+          - /url: /products
+        - link "會員管理" [ref=f1e32] [cursor=pointer]:
+          - /url: /members
+        - link "優惠券" [ref=f1e35] [cursor=pointer]:
+          - /url: /coupons
+        - link "禮品兌換" [ref=f1e38] [cursor=pointer]:
+          - /url: /gifts
+        - link "員工打卡" [ref=f1e41] [cursor=pointer]:
+          - /url: /employees
+        - link "庫存用量報表" [ref=f1e44] [cursor=pointer]:
+          - /url: /inventory-report
+        - link "商品銷售週期報表" [ref=f1e47] [cursor=pointer]:
+          - /url: /product-sales-report
+        - link "服務人員業績表" [ref=f1e50] [cursor=pointer]:
+          - /url: /staff-sales-report
+        - link "毛利分析報表" [ref=f1e53] [cursor=pointer]:
+          - /url: /margin-report
+        - link "稽核紀錄" [ref=f1e56] [cursor=pointer]:
+          - /url: /audit-log
+        - link "廣告管理" [ref=f1e59] [cursor=pointer]:
+          - /url: /promo-messages
+        - link "系統設定變更紀錄" [ref=f1e62] [cursor=pointer]:
+          - /url: /settings-audit-log
+        - link "商店設定" [ref=f1e65] [cursor=pointer]:
+          - /url: /settings
+    - main [ref=f1e69]:
+      - generic [ref=f1e70]:
+        - heading "商品與庫存" [level=1] [ref=f1e71]
+        - paragraph [ref=f1e72]: 共 10 項商品 · 4 項已無庫存 · 售價直接填「元」
+      - navigation [ref=f1e73]:
+        - button "分類與新增商品" [active] [ref=f1e74] [cursor=pointer]
+        - button "商品" [ref=f1e75] [cursor=pointer]
+        - button "目前庫存" [ref=f1e76] [cursor=pointer]
+      - generic [ref=f1e240]:
+        - heading "分類" [level=2] [ref=f1e242]
+        - generic [ref=f1e243]:
+          - textbox "分類名稱，例如 上衣" [ref=f1e244]
+          - combobox "留空＝建立頂層分類，選一個＝建立子分類" [ref=f1e245]:
+            - option "頂層分類" [selected]
+          - button "新增分類" [ref=f1e246] [cursor=pointer]
+      - generic [ref=f1e247]:
+        - generic [ref=f1e248]:
+          - heading "規格群組" [level=2] [ref=f1e249]
+          - generic [ref=f1e250]: 把同一件商品的不同尺寸／顏色綁在一起
+        - paragraph [ref=f1e251]:
+          - text: 每個尺寸／顏色仍然是
+          - strong [ref=f1e252]: 各自獨立的 SKU、各自有庫存
+          - text: —— 白色 M 賣完不影響黑色 L。群組只是讓收銀跟盤點時排在一起。
+        - generic [ref=f1e253]:
+          - textbox "群組名稱，例如 純棉T恤" [ref=f1e254]
+          - button "新增群組" [ref=f1e255] [cursor=pointer]
+      - generic [ref=f1e256]:
+        - heading "新增商品" [level=2] [ref=f1e258]
+        - generic [ref=f1e259]:
+          - textbox "商品的唯一貨號，收銀掃碼/搜尋用。留空會自動編號，也可以填廠商條碼或自己的編號" [ref=f1e260]:
+            - /placeholder: SKU（留空自動編號）
+          - textbox "商品名稱" [ref=f1e261]
+          - spinbutton "售價（元）" [ref=f1e262]
+          - combobox [ref=f1e263]:
+            - option "未分類" [selected]
+            - option "＋ 新增分類…"
+          - combobox [ref=f1e264]:
+            - option "單品（無規格）" [selected]
+            - option "＋ 新增規格群組…"
+          - generic [ref=f1e265] [cursor=pointer]: 選圖片
+          - button "新增商品" [ref=f1e267] [cursor=pointer]
+        - button "更多欄位（選填）" [ref=f1e268] [cursor=pointer]
+      - generic [ref=f1e269]:
+        - heading "商品匯入" [level=2] [ref=f1e271]
+        - paragraph [ref=f1e272]:
+          - text: 用 Excel（.xlsx）一次建立多筆商品：SKU、商品名稱、售價、分類（分類要先在上面建好， 匯入不會順手建新分類，避免打錯字就多出一個看起來很像但其實是新的分類）； 還可以填部門代號、商品英文名稱、商品條碼、PLU編號、廠商代號。
+          - button "下載匯入範本" [ref=f1e273] [cursor=pointer]
+        - generic [ref=f1e274]:
+          - button "Choose File" [ref=f1e275]
+          - button "開始匯入" [disabled] [ref=f1e276]

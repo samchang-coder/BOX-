@@ -1,0 +1,285 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rename-open-boss-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/rename-open-boss/web",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5191"
+      ],
+      "port": 5191
+    },
+    {
+      "name": "default-role-permissions-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/default-role-permissions/web",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5301"
+      ],
+      "port": 5301
+    },
+    {
+      "name": "device-settings-simplify-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/device-settings-simplify/web",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5310"
+      ],
+      "port": 5310
+    },
+    {
+      "name": "vendor-multi-tenant-provisioning-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/vendor-multi-tenant-provisioning/web",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5320"
+      ],
+      "port": 5320
+    },
+    {
+      "name": "japanese-i18n-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/japanese-i18n/web",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5330"
+      ],
+      "port": 5330
+    },
+    {
+      "name": "handover-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/shift-handover/server",
+        "start"
+      ],
+      "port": 4263
+    },
+    {
+      "name": "handover-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/shift-handover/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/shift-handover/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/shift-handover/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5403
+    },
+    {
+      "name": "pos-apple-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/pos-apple-style/server",
+        "start"
+      ],
+      "port": 4262
+    },
+    {
+      "name": "pos-apple-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/pos-apple-style/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/pos-apple-style/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/pos-apple-style/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5402
+    },
+    {
+      "name": "receipt-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/receipt-redesign/server",
+        "start"
+      ],
+      "port": 4264
+    },
+    {
+      "name": "daily-report-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/daily-report/server",
+        "start"
+      ],
+      "port": 4265
+    },
+    {
+      "name": "daily-report-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/daily-report/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/daily-report/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/daily-report/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5404
+    },
+    {
+      "name": "txn-report-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/txn-report/server",
+        "start"
+      ],
+      "port": 4266
+    },
+    {
+      "name": "txn-report-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/txn-report/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/txn-report/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/txn-report/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5405
+    },
+    {
+      "name": "refund-report-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/refund-report/server",
+        "start"
+      ],
+      "port": 4267
+    },
+    {
+      "name": "refund-report-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/refund-report/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/refund-report/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/refund-report/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5406
+    },
+    {
+      "name": "payments-range-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/payments-range/server",
+        "start"
+      ],
+      "port": 4268
+    },
+    {
+      "name": "payments-range-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/payments-range/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/payments-range/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/payments-range/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5407
+    },
+    {
+      "name": "clerk-perms-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/clerk-revenue-perms/server",
+        "start"
+      ],
+      "port": 4269
+    },
+    {
+      "name": "clerk-perms-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/clerk-revenue-perms/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/clerk-revenue-perms/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/clerk-revenue-perms/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5408
+    },
+    {
+      "name": "product-form-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/product-form-simplify/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/product-form-simplify/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/product-form-simplify/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5409
+    },
+    {
+      "name": "multi-store-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/multi-store-report/server",
+        "start"
+      ],
+      "port": 4270
+    },
+    {
+      "name": "multi-store-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/multi-store-report/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/multi-store-report/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/multi-store-report/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5410
+    },
+    {
+      "name": "payment-names-backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "box零售SESSION/.claude/worktrees/payment-names/server",
+        "start"
+      ],
+      "port": 4271
+    },
+    {
+      "name": "payment-names-web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "box零售SESSION/.claude/worktrees/payment-names/web/node_modules/vite/bin/vite.js",
+        "box零售SESSION/.claude/worktrees/payment-names/web",
+        "--config",
+        "box零售SESSION/.claude/worktrees/payment-names/web/_tmp_vite.verify.config.js"
+      ],
+      "port": 5411
+    }
+  ]
+}

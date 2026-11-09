@@ -1,0 +1,146 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]: BOXS零售 POS
+  - generic [ref=f1e6]:
+    - navigation [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - paragraph [ref=f1e9]: 報表
+        - link "今日報表" [ref=f1e10] [cursor=pointer]:
+          - /url: /dashboard
+      - generic [ref=f1e13]:
+        - paragraph [ref=f1e14]: 前場
+        - link "收銀" [ref=f1e15] [cursor=pointer]:
+          - /url: /pos
+        - link "訂單管理" [ref=f1e18] [cursor=pointer]:
+          - /url: /orders
+        - link "付款紀錄" [ref=f1e21] [cursor=pointer]:
+          - /url: /payments
+        - link "錢櫃" [ref=f1e24] [cursor=pointer]:
+          - /url: /cash-drawer
+      - generic [ref=f1e27]:
+        - paragraph [ref=f1e28]: 後場管理
+        - link "商品與庫存" [ref=f1e29] [cursor=pointer]:
+          - /url: /products
+        - link "會員管理" [ref=f1e32] [cursor=pointer]:
+          - /url: /members
+        - link "優惠券" [ref=f1e35] [cursor=pointer]:
+          - /url: /coupons
+        - link "禮品兌換" [ref=f1e38] [cursor=pointer]:
+          - /url: /gifts
+        - link "員工打卡" [ref=f1e41] [cursor=pointer]:
+          - /url: /employees
+        - link "庫存用量報表" [ref=f1e44] [cursor=pointer]:
+          - /url: /inventory-report
+        - link "商品銷售週期報表" [ref=f1e47] [cursor=pointer]:
+          - /url: /product-sales-report
+        - link "服務人員業績表" [ref=f1e50] [cursor=pointer]:
+          - /url: /staff-sales-report
+        - link "毛利分析報表" [ref=f1e53] [cursor=pointer]:
+          - /url: /margin-report
+        - link "稽核紀錄" [ref=f1e56] [cursor=pointer]:
+          - /url: /audit-log
+        - link "廣告管理" [ref=f1e59] [cursor=pointer]:
+          - /url: /promo-messages
+        - link "系統設定變更紀錄" [ref=f1e62] [cursor=pointer]:
+          - /url: /settings-audit-log
+        - link "商店設定" [ref=f1e65] [cursor=pointer]:
+          - /url: /settings
+    - main [ref=f1e69]:
+      - generic [ref=f1e70]:
+        - heading "商品與庫存" [level=1] [ref=f1e71]
+        - paragraph [ref=f1e72]: 共 4 項商品 · 1 項已無庫存 · 售價直接填「元」
+      - navigation [ref=f1e73]:
+        - button "分類與新增商品" [ref=f1e74] [cursor=pointer]
+        - button "商品" [ref=f1e75] [cursor=pointer]
+        - button "目前庫存" [ref=f1e76] [cursor=pointer]
+      - generic [ref=f1e77]:
+        - generic [ref=f1e78]:
+          - heading "批次編輯" [level=2] [ref=f1e79]
+          - button "開始批次編輯" [ref=f1e80] [cursor=pointer]
+        - paragraph [ref=f1e81]: 勾選多個商品，一次套用同一個變更（改分類／上下架／調整售價），比逐筆編輯快。
+      - generic [ref=f1e83]:
+        - heading "單品" [level=2] [ref=f1e85]
+        - table [ref=f1e87]:
+          - rowgroup [ref=f1e88]:
+            - row [ref=f1e89]:
+              - columnheader [ref=f1e90]
+              - columnheader "SKU" [ref=f1e91]
+              - columnheader "名稱" [ref=f1e92]
+              - columnheader "分類" [ref=f1e93]
+              - columnheader "售價" [ref=f1e94]
+              - columnheader "成本" [ref=f1e95]
+              - columnheader "毛利率" [ref=f1e96]
+              - columnheader "狀態" [ref=f1e97]
+              - columnheader [ref=f1e98]
+          - rowgroup [ref=f1e99]:
+            - row [ref=f1e100]:
+              - cell [ref=f1e101]
+              - cell "P0001" [ref=f1e102]
+              - cell "測試包裝商品" [ref=f1e103]
+              - cell "—" [ref=f1e104]
+              - cell "$100" [ref=f1e105]
+              - cell "$100" [ref=f1e106]
+              - cell "0.0%" [ref=f1e107]
+              - cell "販售中" [ref=f1e108]
+              - cell [ref=f1e110]:
+                - button "編輯" [ref=f1e111] [cursor=pointer]
+                - button "停售" [ref=f1e112] [cursor=pointer]
+                - button "刪除" [ref=f1e113] [cursor=pointer]
+            - row [ref=f1e114]:
+              - cell [ref=f1e115]
+              - cell "P0002" [ref=f1e116]
+              - cell "測試進貨商品" [ref=f1e117]
+              - cell "—" [ref=f1e118]
+              - cell "$50" [ref=f1e119]
+              - cell "$30" [ref=f1e120]
+              - cell "40.0%" [ref=f1e121]
+              - cell "販售中" [ref=f1e122]
+              - cell [ref=f1e124]:
+                - button "編輯" [ref=f1e125] [cursor=pointer]
+                - button "停售" [ref=f1e126] [cursor=pointer]
+                - button "刪除" [ref=f1e127] [cursor=pointer]
+            - row [ref=f1e128]:
+              - cell [ref=f1e129]
+              - cell "P0003" [ref=f1e130]
+              - cell "測試無成本商品" [ref=f1e131]
+              - cell "—" [ref=f1e132]
+              - cell "$80" [ref=f1e133]
+              - cell "—" [ref=f1e134]
+              - cell "—" [ref=f1e135]
+              - cell "販售中" [ref=f1e136]
+              - cell [ref=f1e138]:
+                - button "編輯" [ref=f1e139] [cursor=pointer]
+                - button "停售" [ref=f1e140] [cursor=pointer]
+                - button "刪除" [ref=f1e141] [cursor=pointer]
+            - row [ref=f1e156]:
+              - cell "選圖" [ref=f1e157]
+              - cell [ref=f1e160]:
+                - textbox [ref=f1e161]: P0004
+              - cell [ref=f1e162]:
+                - textbox [ref=f1e163]: 稅別測試商品
+              - cell "未分類" [ref=f1e164]:
+                - combobox [ref=f1e165]:
+                  - option "未分類" [selected]
+              - cell [ref=f1e166]:
+                - spinbutton [ref=f1e167]: "99"
+              - cell "—" [ref=f1e168]
+              - cell "—" [ref=f1e169]
+              - cell "編輯中" [ref=f1e170]
+              - cell [ref=f1e171]:
+                - button "儲存" [ref=f1e172] [cursor=pointer]
+                - button "取消" [ref=f1e173] [cursor=pointer]
+            - row [ref=f1e174]:
+              - cell [ref=f1e175]:
+                - generic [ref=f1e176]:
+                  - textbox "部門代號" [ref=f1e177]
+                  - textbox "商品英文名稱" [ref=f1e178]
+                  - textbox "商品條碼" [ref=f1e179]
+                  - textbox "PLU編號" [ref=f1e180]
+                  - textbox "廠商代號" [ref=f1e181]
+                  - textbox "包裝單位" [ref=f1e182]
+                  - textbox "銷售單位" [ref=f1e183]
+                  - spinbutton "換算率" [ref=f1e184]
+                  - combobox [ref=f1e185]:
+                    - option "應稅"
+                    - option "免稅"
+                    - option "零稅率"
